@@ -1,0 +1,5 @@
+{
+    "DEPLOYMENT_ENV": "local",
+    "JWT_SECRET": "Secret_Pakaya",
+    "JWT_EXPIRE": "1d"
+}

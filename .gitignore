@@ -1,0 +1,11 @@
+# Vscode and IDEA
+.idea
+.vscode/
+
+# Node JS
+node_modules/
+
+
+#evars
+evars.json
+
