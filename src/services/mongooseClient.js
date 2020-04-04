@@ -1,16 +1,3 @@
-// import redis from ""
-// import { Logger } from "../services/Logger"
-// import config from "../utils/config"
-// import { injectRedisClient } from "../utils/dependencyInjection"
-
-// const logger = new Logger("RedisClient")
-
-// const init = () =>
-//     redis
-//         .createClient({ host: config.REDIS_HOST, port: config.REDIS_PORT })
-//         .on("ready", () => logger.debug("Redis Client ready."))
-
-// export default injectRedisClient(init)
 const conf = include("utils/config")
 const { MONGO_DB_URL } = conf
 
