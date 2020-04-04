@@ -1,19 +1,23 @@
-const conf = include("utils/config")
-const { JWT_SECRET } = conf
-const [User, UserRole] = include("models/mongooseSchemas/user")
+const UserRole = include("models/mongooseSchemas/user")
 const TokenManager = include("utils/TokenManager")
 
-const saveUser = async ({ email, password, fullName, contactNumber }) => {
-    const user = new User({ email, password, fullName, contactNumber })
-    
-      try {
-        const newUser = await user.save()
-        return newUser
-      } catch (err) {
-        return new Error({ message: err.message })
-      }
+const save = ({ userName, email, fullName }) => {
+  const userRole = new UserRole({ userName, email, fullName })
+  return new Promise((resolve, reject) => {
+    const result = userRole.save()
+    if (result) {
+      resolve(result)
+    } else {
+      reject(result)
+    }
+  })
 }
+const findAll = () => new Promise((resolve, reject) => {
+  const result = UserRole.find()
+  result ? resolve(result) : reject(result)
+})
 
 module.exports = {
-    saveUser
+  save,
+  findAll
 }

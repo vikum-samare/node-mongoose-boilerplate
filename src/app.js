@@ -3,12 +3,13 @@ const jwt = require("jsonwebtoken")
 const cors = require("cors")
 
 const routes = include("routes")
-
 const { checkJwt } = include("controllers/middleware")
-
+const mongoose = require('mongoose')
 const app = express()
 const port = 6000
 
+// Mongoose connectiom
+include("services/mongooseClient")(mongoose)
 
 // Todo: Connect mongo db
 app.use("*/heartbeat", (req, res) => res.status(200).json({message: "I'm fine, Thank you.!"}))

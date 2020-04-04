@@ -17,6 +17,16 @@ const userRoleSchema = mongoose.Schema({
     }
     // Todo: Add user policy
 })
+// Working model
+const UserRoleSchema = mongoose.Schema({
+    userName: String,
+    email: String,
+    fullName: String,
+
+}, {
+    timestamps: true
+});
+
 const userSchema = mongoose.Schema({
     email: {
         type: String,
@@ -46,4 +56,4 @@ const userSchema = mongoose.Schema({
     },
     userRoles: [userRoleSchema]
 })
-module.exports = [mongoose.model('User', userSchema), mongoose.model('UserRole', userRoleSchema)]
+module.exports = mongoose.model('UserRole', UserRoleSchema)
