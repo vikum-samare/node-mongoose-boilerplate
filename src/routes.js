@@ -18,4 +18,8 @@ router.post("/user/view", send(UserController.verifyUser))
 
 router.post("/user/save", send(UserController.recordeUser))
 
+router.get("/user/find-all", send(UserController.findAllUsers))
+
+
+
 module.exports = router
