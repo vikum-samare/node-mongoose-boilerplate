@@ -1,5 +1,6 @@
 {
     "DEPLOYMENT_ENV": "local",
     "JWT_SECRET": "Secret_Pakaya",
-    "JWT_EXPIRE": "1d"
+    "JWT_EXPIRE": "1d",
+    "MONGO_DB_URL": "mongodb://localhost:27017/febe-user"
 }

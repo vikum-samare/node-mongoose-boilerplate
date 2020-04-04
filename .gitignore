@@ -5,6 +5,9 @@
 # Node JS
 node_modules/
 
+# Mongo db data path
+data/
+
 
 #evars
 evars.json
